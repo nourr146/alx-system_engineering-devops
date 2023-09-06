@@ -1,2 +1,4 @@
 #!/bin/bash
 count=0
+find . -type d -name ".*" -prune -o -type d ! -name "." ! -name ".." -exec echo {} \; -execdir sh -c 'count=$((count+1))' \;
+echo "Total directories (including hidden): $count"
